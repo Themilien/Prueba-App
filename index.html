@@ -19,16 +19,14 @@
             <button class="spawn-img" onclick="">Generar Imagen</button>
 
             <div class="img-random">
-                <img id="container" src="	
-                https://api.lorem.space/image/movie?w=720&amp;amp;amp;amp;h=1080" sizes="80vw" alt="img-random" onclick="function()">
-
-                <script>
-                document.querySelector("button").onclick = function() {
-                    document.getElementById("container").src;}
-                </script>
+                <img src="	
+                https://api.lorem.space/image/movie?w=720&amp;amp;amp;amp;h=1080" sizes="80vw" alt="img-random">
             </div>
 
         </div>
     </body>
+    <script>
+        document.querySelector(".img-random-img").contentWindow.location.reload(true);
+    </script>
 
 </html>
