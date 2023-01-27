@@ -8,28 +8,40 @@
     </head>
 
     <body>
-        
-        
 
         <div class="contenedor">
 
             <h1 class="titulo">Generador de imagenes</h1>
 
-            <button class="spawn-img" onclick="">Generar Imagen</button>
+            <button id="spawn-img">Generar Imagen</button>
 
             <div class="img-random">
-                <img class="img-random-img" src="	
-                https://api.lorem.space/image/movie?w=720&amp;amp;amp;amp;h=1080" sizes="80vw" alt="img-random">
+                <img id="img-random-img" src="	
+                https://api.lorem.space/image/movie?w=&amp;amp;amp;amp;" alt="img-random">
             </div>
 
         </div>
+
     </body>
+
     <script>
-        document.querySelector(".img-random-img").addEventListener("click", recargarElemento(e));
-        function recargarElemento(e){
-            e.target.src = " https://api.lorem.space/image/movie?w=720&amp;amp;amp;amp;h=1080" + new Date().getTime();
-        }
+
+        const img = document.getElementById("img-random-img");
+        const button = document.getElementById("spawn-img");
+
+        maxh = screen.height
+        maxw = screen.width
+
+        let random = function getRandomArbitrary(min, max) {
+                return Math.floor(Math.random() * (max - min) + min);
+            }
         
+        button.onclick = function()
+        {
+            let timestamp = new Date().getTime();
+            img.src = "https://api.lorem.space/image/movie?" + random(360, maxw) + "&amp;amp;amp;amp;h=" + random(360, maxh) + ";t=" + timestamp;
+        }
+
     </script>
 
 </html>
