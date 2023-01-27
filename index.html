@@ -4,7 +4,6 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="style.css"/>
-
         <title>App</title>
     </head>
 
@@ -19,14 +18,18 @@
             <button class="spawn-img" onclick="">Generar Imagen</button>
 
             <div class="img-random">
-                <img src="	
+                <img class="img-random-img" src="	
                 https://api.lorem.space/image/movie?w=720&amp;amp;amp;amp;h=1080" sizes="80vw" alt="img-random">
             </div>
 
         </div>
     </body>
     <script>
-        document.querySelector(".img-random-img").contentWindow.location.reload(true);
+        document.querySelector(".img-random-img").addEventListener("click", recargarElemento(e));
+        function recargarElemento(e){
+            e.target.src = " https://api.lorem.space/image/movie?w=720&amp;amp;amp;amp;h=1080" + new Date().getTime();
+        }
+        
     </script>
 
 </html>
