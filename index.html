@@ -29,7 +29,7 @@
 
     <script>
 
-        const img = document.getElementById("img-random-img");
+        const img = document.getElementById("img-random-img"); /*No buscar por id, usar quarySlector*/
         const button_img = document.getElementById("spawn-img");
         const button_count = document.getElementById("sum");
         const text_count = document.getElementById("count");
@@ -43,7 +43,7 @@
                 return Math.floor(Math.random() * (max - min) + min);
             }
         
-        button_img.onclick = function()
+        button_img.onclick = function() /*Está en desuso, usar addEvenList*/
         {
             let timestamp = new Date().getTime();
             img.src = "https://api.lorem.space/image/movie?" + random(360, maxw) + "&amp;amp;amp;amp;h=" + random(360, maxh) + ";t=" + timestamp;
