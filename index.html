@@ -21,6 +21,8 @@
             </div>
 
             <label for="misImagenes"> Subir imagen: <input type="file" name="Files" id="misImagenes"/></label>
+
+            <button id="sum">+1</button> <p id="count">0</p>
         </div>
 
     </body>
@@ -28,7 +30,11 @@
     <script>
 
         const img = document.getElementById("img-random-img");
-        const button = document.getElementById("spawn-img");
+        const button_img = document.getElementById("spawn-img");
+        const button_count = document.getElementById("sum");
+        const text_count = document.getElementById("count");
+
+
 
         maxh = screen.height
         maxw = screen.width
@@ -37,10 +43,18 @@
                 return Math.floor(Math.random() * (max - min) + min);
             }
         
-        button.onclick = function()
+        button_img.onclick = function()
         {
             let timestamp = new Date().getTime();
             img.src = "https://api.lorem.space/image/movie?" + random(360, maxw) + "&amp;amp;amp;amp;h=" + random(360, maxh) + ";t=" + timestamp;
+        }
+        
+        button_count.onclick = function(){
+
+           let sum_count = Number(text_count.textContent);
+            sum_count += 1 ;
+            text_count.textContent = sum_count;
+
         }
 
     </script>
